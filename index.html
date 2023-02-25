@@ -1,0 +1,177 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Periodic Table Quiz</title>
+	
+	<!--link for style sheet-->
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+		
+</head>
+
+<body>
+	
+	<!--this is the top banner...logo and navigation-->
+	<div class="topnav">
+		<img src="images/logo1.jpg">
+		<img src="images/intro.gif">
+  		<a class="active" href="https://pattyparkerfl.github.io/week3/">Home</a>
+  		<a href="placeholder.html">Ask a Teacher</a>
+ 		<a href="placeholder.html">Video Tutorials</a>
+		<a href="placeholder.html">Labs</a>
+  	</div>
+	
+	<div class="quiz_container">
+		<!--this is form for periodic table quiz-->
+		<h1>Periodic Table Quiz</h1>
+		<form name = "quizForm" >
+		
+			<!--this is question 1-->
+			<p>1. The only subatomic particle that does not carry an electric charge is the</p>
+			<div class="radio-button">
+  				<input type="radio" id="proton" name="question1" value="proton">
+  				<label for="proton">A. proton</label><br>
+		  		<input type="radio" id="neutron" name="question1" value="neutron">
+  				<label for="css">B. neutron</label><br>
+				<input type="radio" id="electron" name="question1" value="electron">
+ 				<label for="css">C. electron</label><br>
+		  		<input type="radio" id="nucleus" name="question1" value="nucleus">
+  				<label for="nucleus">D. nucleus</label><br><br>
+			</div>	
+		
+			<!--this is question 2-->
+			<div class="radio-button">
+				<p>2. An industrially important element contains 26 electrons and rusts in the presence of air and moisture. Identify the element.</p>
+	  			<input type="radio" id="aluminum" name="question2" value="aluminum">
+  				<label for="aluminum">A. aluminum</label><br>
+		  		<input type="radio" id="iron" name="question2" value="iron">
+  				<label for="iron">B. iron</label><br>
+				<input type="radio" id="potassium" name="question2" value="potassium">
+  				<label for="potassium">C. potassium</label><br>
+		  	 	<input type="radio" id="sodium" name="question2" value="sodium">
+  				<label for="sodium">D. sodium</label><br><br>										  
+			</div>
+		
+			<!--this is question 3-->
+			<div class="radio-button">
+				<p>3. The _____ is where the electron is most likely to be found</p>
+	  			<input type="radio" id="energylevel" name="question3" value="energylevel">
+  				<label for="energylevel">A. energy level</label><br>
+		  		<input type="radio" id="electronorbit" name="question3" value="electronorbit">
+  				<label for="electronorbit">B. electron orbit</label><br>
+				<input type="radio" id="electroncloud" name="question3" value="electroncloud">
+  				<label for="electroncloud">C. electron cloud</label><br>
+  	 			<input type="radio" id="orbit" name="question3" value="orbit">
+  				<label for="orbit">D. orbit</label><br><br>
+			</div>
+		
+			<div class="radio-button">
+			<!--this is question 4-->
+				<p>4. J.J. Thomson used a cathode ray to discover the</p>
+	  			<input type="radio" id="atom" name="question4" value="atom">
+  				<label for="atom">A. atom</label><br>
+  				<input type="radio" id="proton2" name="question4" value="proton2">
+  				<label for="proton2">B. proton</label><br>
+				<input type="radio" id="electron2" name="question4" value="electron2">
+  				<label for="electron2">C. electron</label><br>
+  	 			<input type="radio" id="neutron2" name="question4" value="neutron2">
+  				<label for="neutron2">D. neutron</label><br><br>
+			</div>
+		
+			<div class="radio-button">
+			<!--this is question 5-->
+				<p>5. The mass of an electron is</p>
+	  			<input type="radio" id="smallern" name="question5" value="smallern">
+  				<label for="smallern">A. smaller than the mass of a neutron.</label><br>
+  				<input type="radio" id="smallerp" name="question5" value="smallerp">
+  				<label for="smallerp">B. smaller than the mass of a proton.</label><br>
+				<input type="radio" id="smallera" name="question5" value="smallera">
+  				<label for="smallera">C. a tiny fraction of the mass of an atom</label><br>
+  	 			<input type="radio" id="all" name="question5" value="all">
+  				<label for="all">D. all of the above</label><br><br>
+			</div>
+		
+			<!--name of student-->
+  			<label for="fname">First name:</label><br>
+  			<input type="text" id="fname" name="fname"><br><br>
+  			<label for="lname">Last name:</label><br>
+  			<input type="text" id="lname" name="lname"><br><br>
+						
+			<!--submit form-->
+			<input type = "button" onclick = "quizGrade()" value = "Submit Quiz">
+		</form> 
+	
+		<!--function to grade quiz and display results-->
+		<script type = "text/javascript">
+    		function quizGrade() {
+            
+			/*form and question variables */
+            var fname, lname, question1, question2, question3, question4, question5, grade1, grade2, grade3, grade4, grade5, total, wrong;
+            fname = document.quizForm.fname.value;
+			lname = document.quizForm.lname.value;
+            question1 = document.quizForm.question1.value;
+            question2 = document.quizForm.question2.value;
+			question3 = document.quizForm.question3.value;
+			question4 = document.quizForm.question4.value;
+			question5 = document.quizForm.question5.value;
+			
+			
+			 /*quiz grading */
+			if (question1 == "neutron"){ 
+			grade1=1;
+			}
+			else{
+			grade1=0
+			document.getElementById("results1").innerHTML =  " #1 ";	
+			}
+			if (question2 == "iron"){ 
+			grade2=1;
+			}
+			else{
+			grade2=0
+			document.getElementById("results2").innerHTML =  " #2 ";
+			}
+			if (question3 == "electroncloud"){ 
+			grade3=1;
+			}
+			else{
+			grade3=0
+			document.getElementById("results3").innerHTML =  " #3 ";
+			}
+			if (question4 == "proton2"){ 
+			grade4=1;
+			}
+			else{
+			grade4=0
+			document.getElementById("results4").innerHTML =  " #4 ";
+			}
+			if (question5 == "all"){ 
+			grade5=1;
+			}
+			else{
+			grade5=0
+			document.getElementById("results5").innerHTML =  " #5 ";
+			}
+ 			total = grade1 + grade2 + grade3 + grade4 + grade5;
+            
+			/*display results */
+			document.getElementById("Output").innerHTML = fname +" " + lname + " your total score is " + total + " out of 5";
+			}		
+		</script>      
+	</div>
+	
+	<!--display results -->
+	<div class="img_container">
+		<img src = "images/periodic.jpg"><br><br>
+		<!--results displayed-->
+		<p id ="Output" style = "font-size: 200%;">Quiz Results:</p>
+		<p style="font-size:150%;"> Questions wrong:</p>
+		<p id ="results1" style="font-size:150%;"> </p>
+		<p id ="results2" style="font-size:150%;"> </p>
+		<p id ="results3" style="font-size:150%;"> </p>
+		<p id ="results4" style="font-size:150%;"> </p>
+		<p id ="results5" style="font-size:150%;"> </p>
+	</div>
+	
+</body>
+</html>
